@@ -9,7 +9,7 @@
     <th><b>Apellido</b></th>
     <th><b>Cedula</b></th>
     <th><b>Suma Cedula</b></th>
-    <th><b>Lista telefonos</b></th>
+    <th><b>Inicial Nombre</b></th>
     <th><b>Opciones</b></th>
   </tr>
   {% for e in estudiantes %}
@@ -24,7 +24,10 @@
       {{e.cedula}}
     </td>
     <td>
-      {{e.sumaCedula}}
+      {{e.get_suma_cedula}}
+    </td>
+     <td>
+      {{e.get_inicialNombre}}
     </td>
     <td>
       <ul>
