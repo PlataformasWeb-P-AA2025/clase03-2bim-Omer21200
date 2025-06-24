@@ -1,0 +1,9 @@
+<h2>Listado de Países</h2>
+
+<ul>
+  {% for pais in paises %}
+    <li>{{ pais.nombre }} - Capital: {{ pais.capital }} - Provincias: {{ pais.numero_provincias }} - Habitantes: {{ pais.numero_habitantes }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'index' %}">inicio</a>
