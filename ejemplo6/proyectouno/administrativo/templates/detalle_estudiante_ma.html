@@ -1,0 +1,23 @@
+<h2>Detalle del Estudiante</h2>
+<p><strong>Nombre:</strong> {{ estudiante.nombre }}</p>
+<p><strong>Apellido:</strong> {{ estudiante.apellido }}</p>
+<p><strong>Cédula:</strong> {{ estudiante.cedula }}</p>
+<p><strong>Edad:</strong> {{ estudiante.edad }}</p>
+<p><strong>Tipo:</strong> {{ estudiante.get_tipo_estudiante_display }}</p>
+
+<hr>
+<h3>Matrículas</h3>
+{% if matriculas %}
+    <ul>
+    {% for matricula in matriculas %}
+        <li>
+            <strong>Módulo:</strong> {{ matricula.modulo.get_nombre_display }} <br>
+            <strong>Costo:</strong> ${{ matricula.costo }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tiene matrículas registradas.</p>
+{% endif %}
+
+<a href="{% url 'index' %}">Volver</a>

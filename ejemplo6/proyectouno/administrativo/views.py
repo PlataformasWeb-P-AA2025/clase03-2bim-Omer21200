@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render
 
+
 # importar las clases de models.py
 from administrativo.models import Matricula, Estudiante
 from administrativo.forms import MatriculaForm, MatriculaEditForm
@@ -73,3 +74,11 @@ def detalle_estudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
     informacion_template = {'e': estudiante}
     return render(request, 'detalle_estudiante.html', informacion_template)
+
+def detalle_estudiante_ma(request, id):
+    estudiante = Estudiante.objects.get(pk=id)
+    matriculas = estudiante.obtener_matriculas()  # devuelve todas sus matrículas
+    return render(request, 'detalle_estudiante_ma.html', {
+        'estudiante': estudiante,
+        'matriculas': matriculas
+    })

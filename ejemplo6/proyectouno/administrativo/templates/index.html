@@ -3,6 +3,8 @@
 <h3>Número de Matriculas {{ numero_matriculas }}</h3>
 <hr>
 [<a href="{% url 'crear_matricula' %}">nuevo</a>]
+<br>
+[<a href="{% url 'index' %}">Listar Estudiantes</a>]
 <hr>
 <table border="1px">
   <tr>
@@ -26,6 +28,7 @@
     <td>
       [<a href="{% url 'detalle_matricula' e.id %}">ver</a>]
       [<a href="{% url 'editar_matricula' e.id %}">editar</a>]
+      [<a href="{% url 'detalle_estudiante_ma' e.id %}">Ver Estudiante Completo</a>]
     </td>
   </tr>
   {% endfor %}
